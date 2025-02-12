@@ -7,7 +7,11 @@ class StringCalculator {
             return 0;
         }
         const numbersArray = rawString.split(',');
-        console.log(numbersArray);
+        let sum = 0;
+        for (let i = 0; i < numbersArray.length; i++) {
+          sum += parseInt(numbersArray[i], 10);
+        }
+        return sum;
     }
     
   }
