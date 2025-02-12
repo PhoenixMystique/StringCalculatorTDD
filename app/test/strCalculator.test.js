@@ -19,4 +19,7 @@ describe('StringCalculator', () => {
   test('empty string', () => {
     expect(StringCalculator.add('')).toBe(0);
   });
+  test('if data type is different', () => {
+    expect(StringCalculator.add({})).toBe("Invalid input type");
+  });
 });
