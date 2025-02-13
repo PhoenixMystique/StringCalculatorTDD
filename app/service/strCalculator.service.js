@@ -9,7 +9,7 @@ class StringCalculator {
             if (typeof rawString !== 'string') {
                return  "Invalid input type";
             }
-            const numbersArray = rawString.split(',');
+            const numbersArray = rawString.split(/[,\n]/);
             let sum = 0;
             for (let i = 0; i < numbersArray.length; i++) {
               sum += parseInt(numbersArray[i], 10);

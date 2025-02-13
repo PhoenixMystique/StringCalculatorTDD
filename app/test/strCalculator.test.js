@@ -22,4 +22,7 @@ describe('StringCalculator', () => {
   test('if data type is different', () => {
     expect(StringCalculator.add({})).toBe("Invalid input type");
   });
+  test('add numbers with newlines and commas returns sum', () => {
+    expect(StringCalculator.add('1\n2,3')).toBe(6);
+  });
 });
