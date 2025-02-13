@@ -6,7 +6,7 @@ class StringCalculator {
                 return 0;
             }
             if (typeof rawString !== 'string') {
-               return  "Invalid input type";
+              throw new Error('Invalid input type');
             }
             //Inital Delimiter without including custom
             let delimiter = /[,\n]/;
