@@ -4,7 +4,7 @@
   "description": "Incubyte TDD Assessment",
   "main": "app/main.js",
   "scripts": {
-    "process": "node app/main.js",
+    "start": "node app/main.js",
     "test": "jest"
   },
   "keywords": [

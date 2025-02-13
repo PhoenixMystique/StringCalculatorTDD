@@ -18,7 +18,8 @@ class StringCalculator {
               rawString = rawString.substring(delEndIndex + 1);
             }
 
-            const numbersArray = rawString.split(delimiter);
+            let numbersArray = rawString.split(delimiter);
+            numbersArray= numbersArray.filter(str => str.trim() !== '');
             // if -0 is there the parse will convert it into 0.
             const numbers = numbersArray.map(rawNumber => parseInt(rawNumber, 10));
             const negativeNumbers = numbers.filter(item => item < 0);
