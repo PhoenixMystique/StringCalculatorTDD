@@ -10,10 +10,13 @@ class StringCalculator {
             }
             //Inital Delimiter without including custom
             let delimiter = /[,\n]/;
-        
+            let isMulitply=false
             if (rawString.startsWith('//')) {
               const delEndIndex = rawString.indexOf('\n');
               const customDelimiter = rawString.substring(2, delEndIndex);
+              if(customDelimiter==="*"){
+                isMulitply=true;
+              }
               delimiter = new RegExp(`[${customDelimiter},\n]`);
               rawString = rawString.substring(delEndIndex + 1);
             }
@@ -27,7 +30,7 @@ class StringCalculator {
             if (negativeNumbers.length > 0) {
               throw new Error(`Negative numbers not allowed ${negativeNumbers.join(',')}`);
             }
-            return numbers.reduce((sum, num) => sum + num, 0);
+            return isMulitply?numbers.reduce((sum, num) => sum * num, 1): numbers.reduce((sum, num) => sum + num, 0);
         }
     
   }

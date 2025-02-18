@@ -31,6 +31,9 @@ describe('StringCalculator', () => {
   test('custom delimiter returns sum', () => {
     expect(StringCalculator.add('//;\n1;2')).toBe(3);
   });
+  test('custom delimiter returns sum', () => {
+    expect(StringCalculator.add('//*\n1*2')).toBe(2);
+  });
   test('add negative number will throw exception', () => {
     expect(() => StringCalculator.add('-1')).toThrow('Negative numbers not allowed -1');
   });
